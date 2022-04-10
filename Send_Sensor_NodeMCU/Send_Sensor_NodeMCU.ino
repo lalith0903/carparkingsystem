@@ -115,6 +115,13 @@ function send_data()
 <h3>Slot - 3</h3><meter value="0" min="0" max="1" id="sensor3_meter"> </meter><h3 id="sensor3_value" style="display: inline-block;"> 2 </h3>
 <br>
 <h3>Slot - 4</h3><meter value="0" min="0" max="1" id="sensor4_meter"> </meter><h3 id="sensor4_value" style="display: inline-block;"> 2 </h3>
+</div>
+
+<div style="text-align: center;">
+<h3> Indication of Vechile is parked or not </h3>
+<br>
+<h3>Not Parked </h3><meter value="0" min="0" max="1"> </meter> <h3> 0 </h3>
+<h3> Parked </h3><meter value="1" min="0" max="1"> </meter> <h3> 1 </h3>
 
 </body>
 </html>
