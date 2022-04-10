@@ -1,0 +1,14 @@
+{
+    "short_name": "",
+    "name": "",
+    "icons": [
+        {
+            "src": "",
+            "sizes": "",
+            "type": ""
+        }
+    ],
+    "start_url": "index.php",
+    "display": "standalone",
+    "orientation": "portrait"
+}

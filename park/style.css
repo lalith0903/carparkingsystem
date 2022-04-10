@@ -1,0 +1,97 @@
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body{
+	width: 100%;
+	min-height: 100vh;
+	background-image: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url(parking.jpeg);
+	background-position: center;
+	background-size: cover;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.container{
+	width: 400px;
+	min-height: 400px;
+	background-color: #FFF;
+	border-radius: 5px;
+	padding: 40px 30px;
+	}
+.container .login-email .input-group {
+    width: 100%;
+    height: 50px;
+    margin-bottom: 25px;
+}
+
+.container .login-email .input-group select{
+	margin: 0px;
+	padding: 0px;
+}
+.container .login-email .input-group input {
+    width: 90%;
+    height: 60%;
+    border: 2px solid #e7e7e7;
+    padding: 15px 20px;
+    font-size: 1rem;
+    border-radius: 30px;
+    background: transparent;
+    outline: none;
+    transition: .3s;
+}
+.container .login-email a{
+    text-decoration: none;
+    text-align: center;
+    color: blue;
+}
+.container .login-email .input-group input:focus, .container .login-email .input-group input:valid {
+    border-color: green;
+}
+
+.container .login-email .input-group .btn {
+    display: absolute;
+    width: 90%;
+	height: 60%;
+    padding: 10px 10px;
+    text-align: center;
+    border: none;
+    background: #a29bfe;
+    outline: none;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    color: #FFF;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.container .login-email .input-group .btn:hover {
+    transform: translateY(-5px);
+    background: #6c5ce7;
+}
+
+.login-register-text {
+    color: #111;
+    font-weight: 600;
+}
+
+.login-register-text a {
+    text-decoration: none;
+    color: #6c5ce7;
+}
+
+@media (max-width: 430px) {
+    .container {
+        width: 300px;
+    }
+    .container .login-social {
+        display: block;
+    }
+    .container .login-social a {
+        display: block;
+    }
+}
