@@ -15,7 +15,8 @@
 
 #include <Servo.h>
 
-Servo myservo;
+Servo myservo1;
+Servo myservo2;
 
 #define ir_enter 12 ///
 #define ir_back 13 //
@@ -59,6 +60,7 @@ connection.onmessage = function(event){
   document.getElementById("sensor3_value").innerHTML = Math.abs(1-sens3_data);
   document.getElementById("sensor4_meter").value = Math.abs(1-sens4 _data);
   document.getElementById("sensor4_value").innerHTML = Math.abs(1-sens4_data);
+  document.getElementById("slot").innerHTML = Math.abs(1-sens1_data)+ Math.abs(1-sens4_data) + Math.abs(1-sens2_data) + Math.abs(1-sens3_data);
 }
 function button_1_on()
 {
@@ -122,7 +124,8 @@ function send_data()
 <br>
 <h3>Not Parked </h3><meter value="0" min="0" max="1"> </meter> <h3> 0 </h3>
 <h3> Parked </h3><meter value="1" min="0" max="1"> </meter> <h3> 1 </h3>
-
+</div>
+<h2> NUMBER OF SLOTS AVALIABLE HERE IS <h3 id = "slot" > 0 </h3></h2>
 </body>
 </html>
 )=====";
@@ -195,7 +198,8 @@ void setup(void)
   pinMode(ir_enter, INPUT);
   pinMode(ir_back, INPUT);
 
-  myservo.attach(15);
+  myservo1.attach(15);
+  myservo2.attach(16);
 
 
   if (MDNS.begin("ESP")) { //esp.local/
@@ -228,7 +232,18 @@ void setup(void)
 void loop(void)
 {
  websockets.loop();
- if (slot > 0) {
+ if (ir_enter == LOW & slot > 0) {
+  myservo1.write(90);
+  slot = slot - 1;
+ }
+ else {
+  Serial.println("Parking is full"); 
+ }
+ if (ir_back == LOW & slot < 0) {
+  myservo2.write(90);
+  slot = slot + 1;
+ }
+ /*if (slot > 0) {
    if(digitalRead (ir_enter) == LOW && flag1==0){
     if(slot>0){flag1=1;
     if(flag2==0){myservo.write(180); slot = slot-1;}
@@ -247,7 +262,7 @@ void loop(void)
  }
   
   delay(5000);
-  myservo.write(0);
+  myservo.write(0);*/
 }
 
 void send_sensor()
